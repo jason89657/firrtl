@@ -20,8 +20,7 @@ class FirrtlStage extends Stage {
          new firrtl.stage.phases.Checks,
          new firrtl.stage.phases.AddCircuit,
          new firrtl.stage.phases.AddImplicitOutputFile,
-         new firrtl.stage.phases.Compiler,
-         new firrtl.stage.phases.WriteEmitted )
+         new firrtl.stage.phases.Compiler )
       .map(DeletedWrapper(_))
 
   def run(annotations: AnnotationSeq): AnnotationSeq = try {

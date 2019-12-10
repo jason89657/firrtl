@@ -5,10 +5,9 @@ package firrtl.stage
 import firrtl._
 import firrtl.ir.Circuit
 import firrtl.annotations.{Annotation, NoTargetAnnotation}
-import firrtl.options.{HasShellOptions, OptionsException, ShellOption, Unserializable}
+import firrtl.options.{HasShellOptions, HowToSerialize, OptionsException, ShellOption, Unserializable}
 
-
-import java.io.FileNotFoundException
+import java.io.{File, FileNotFoundException}
 import java.nio.file.NoSuchFileException
 
 /** Indicates that this is an [[firrtl.annotations.Annotation Annotation]] directly used in the construction of a

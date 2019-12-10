@@ -43,7 +43,7 @@ package object stage {
     def view(options: AnnotationSeq): FirrtlExecutionResult = {
       val fopts = Viewer[FirrtlOptions].view(options)
       val emittedRes = options
-        .collect{ case DeletedAnnotation(dummyWriteEmitted.name, a: EmittedAnnotation[_]) => a.value.value }
+        .collect{ case a: EmittedAnnotation[_] => a.value.value }
         .mkString("\n")
 
       options.collectFirst{ case a: FirrtlCircuitAnnotation => a.circuit } match {
