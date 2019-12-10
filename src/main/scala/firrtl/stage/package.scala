@@ -4,7 +4,6 @@ package firrtl
 
 import firrtl.annotations.DeletedAnnotation
 import firrtl.options.{OptionsView, Viewer}
-import firrtl.stage.phases.WriteEmitted
 
 /** The [[stage]] package provides an implementation of the FIRRTL compiler using the [[firrtl.options]] package. This
   * primarily consists of:
@@ -37,8 +36,6 @@ package object stage {
   }
 
   private [firrtl] implicit object FirrtlExecutionResultView extends OptionsView[FirrtlExecutionResult] {
-
-    private lazy val dummyWriteEmitted = new WriteEmitted
 
     def view(options: AnnotationSeq): FirrtlExecutionResult = {
       val fopts = Viewer[FirrtlOptions].view(options)
