@@ -58,7 +58,7 @@ class EliminateTargetPaths extends Transform {
                      newUsedOfModules: mutable.HashSet[String])
                     (originalModule: String, newModule: String)
                     (s: Statement): Statement = s match {
-    case d@DefInstance(_, name, module) =>
+    case d@DefInstance(_, name, module, _) =>
       val ofModule = dupMap.getNewOfModule(originalModule, newModule, Instance(name), OfModule(module)).value
       newUsedOfModules += ofModule
       oldUsedOfModules += module
